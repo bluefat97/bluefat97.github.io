@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>搭建博客之前的一些简单介绍 ~ Hexo</title>
+
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>BlueFat' Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('/img/aha.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 二月 12日 2020, 10:00 上午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.2k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      4 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <blockquote>
+<p>萌新初次搭建博客，经历了很多困难与挫折<br>如果你也想搭建属于自己的博客，欢迎参考我的教程<br>用最简单的语言，最傻瓜式的方式教你搭建博客<br>不需要任何基础哦，只需要一双手和一台电脑 </p>
+</blockquote>
+<a id="more"></a> 
+
+
+<p><font size=4 color=#ff6600 face="黑体">写在最前面:</font><br>&emsp;&emsp;经过一天的尝试，终于把属于自己的博客搭好了，博客，顾名思义，就是用来记录自己学习经历，所遇到的问题，因此开篇我就来介绍一下是如何搭建该博客的吧~<br>&emsp;&emsp;本文是想给跟我一样0基础的小白介绍一下搭建博客之前需要简单了解的基础知识，下一篇文章将介绍如何搭建属于自己的博客，不涉及Jekyll、GitHub等的具体细节，不涉及二者的高级用法，尽量让那些只要会操作电脑的人都能够看懂如何创建一个博客。当然如果遇到了任何问题欢迎找我交流~</p>
+<h3 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h3><p>&emsp;&emsp;计算机网络所涉及的内容过于庞杂，因此我就只简单介绍一下我们平常访问一个网页的原理是什么。平常我们访问网页，比如说<a href="http://www.github.com" target="_blank" rel="noopener">www.github.com</a> ，当我们在浏览器输入并回车以后，浏览器会自动使用DNS协议向DNS服务器发送数据包，DNS服务器会返回给我们GitHub的IP地址，浏览器会根据GitHub的IP地址去访问它的服务器，最后下载我们所访问的网页的html再展示给用户。<br>&emsp;&emsp;说白了就是一个客户端，一个服务端，客户端发送请求，服务端进行后台操作并返回客户端的请求。中间会通过DNS协议帮我们解析IP地址。<br><img src="/img/blog_img/2020212/blog_content.jpg" srcset="/img/loading.gif" alt=""></p>
+<h3 id="2-常见的搭博客的方法"><a href="#2-常见的搭博客的方法" class="headerlink" title="2.常见的搭博客的方法"></a>2.常见的搭博客的方法</h3><p>本人只介绍两个我比较熟悉方法，如果有其他的，欢迎补充~~  </p>
+<ul>
+<li>通过GitHub平台搭建（即本人所使用的方法）</li>
+<li>自己租用云服务器，购买域名，使用html5+其他后端语言如python、php等自己做前端+后端等 </li>
+</ul>
+<p>&emsp;&emsp;作为学生党，且作为一个编程菜鸟甚至不会编程的萌新，使用第二种方法明显是不可能的。第一，没技术。你会HTML、CSS、JavaScript吗？你会美工吗？你会设计网页样式吗？你会PHP、python等可以做后端的语言吗？你会SQL数据库操作吗？如果你都会，那么恭喜你，你已经是个合格的全栈工程师了！第二，花钱租服务器，租一个云服务器+购买域名最少一个月也得几十块钱吧，对于我们只需要自己记录记录的人来说，可以花这钱，但没必要。</p>
+<h3 id="3-GitHub介绍"><a href="#3-GitHub介绍" class="headerlink" title="3.GitHub介绍"></a>3.GitHub介绍</h3><p>&emsp;&emsp;GitHub是一个面向开源及私有软件项目的托管平台，聚集了无数优秀程序员的开源平台，是程序员的圣地，截止目前，GitHub 已经发展成全球最大的开（同）源（性）社区。<br>&emsp;&emsp;GitHub有什么用？</p>
+<ul>
+<li>学习优秀的开源项目</li>
+<li>多人协作办公</li>
+<li><font color=#ff0000 >搭建博客、个人网站或者公司官网</font></li>
+<li>其他</li>
+</ul>
+<p>&emsp;&emsp;为什么要加个其他呢？因为只有想不到没有做不到~不过请放心，本教程不会介绍也不涉及很复杂的git操作，只需要使用GitHub桌面版懂得如何clone、push一个项目即可。</p>
+<h3 id="4-Jekyll介绍"><a href="#4-Jekyll介绍" class="headerlink" title="4.Jekyll介绍"></a>4.Jekyll介绍</h3><p>&emsp;&emsp;当然在介绍Jekyll之前我们不得不简单提一下GitHub Pages 是啥（Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服 务，站点可以被免费托管在 Github 上）&emsp;嗯，说完这些我猜你也没看懂，不过你只需要知道我们可以将一个静态博客框架放进GitHub的仓库里，再改个名，别人就可以通过GitHub来访问你的博客了。<br>&emsp;&emsp;目前有两大静态的博客主流框架jekyll和hexo（在我写这篇博客之前只知道jekyll，现在我发现hexo好像更酷！）jekyll和hexo就是两种不同版本的博客框架，你可以想象成就是可以给你提供博客样式选择，选一款你喜欢的样式然后再GitHub上clone下来，再将里面的信息改成自己的即可~</p>
+<p>以上就是在搭建博客之前我想介绍给大家的东西，如果没看懂也没关系~下一篇文章将具体向大家介绍如何搭建自己的博客</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2">博客</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF">技术</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+
+    <!-- cnzz Analytics icon -->
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- cnzz Analytics -->
+  
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "搭建博客之前的一些简单介绍&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
