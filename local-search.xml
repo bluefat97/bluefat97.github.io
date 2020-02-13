@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>如何使用Hexo+GitHub搭建博客(一)</title>
+    <link href="/2020/02/13/2020-02-13-how%20to%20set%20up%20our%20blog/"/>
+    <url>/2020/02/13/2020-02-13-how%20to%20set%20up%20our%20blog/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文写给那些0基础却希望拥有一个自己的博客的小白，不会介绍很多高级的用法及hexo的详细配置，如果想要更深入的了解，请参照<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo文档</a>及<a href="https://fluid-dev.github.io/hexo-fluid-docs/" target="_blank" rel="noopener">Fluid文档</a>进行配置。  </p></blockquote><h3 id="一-Hexo及Fluid主题的优势"><a href="#一-Hexo及Fluid主题的优势" class="headerlink" title="一.Hexo及Fluid主题的优势"></a>一.Hexo及Fluid主题的优势</h3><p>在基于GitHub平台使用静态博客搭建主流的主题有有两种：  </p><ul><li>Jekyll</li><li>Hexo  </li></ul><p>一开始我选择的是Jekyll，没有去使用git工具，只使用了GitHub桌面版+Visual Studio进行操作，每次修改完代码就进行push（即把代码更新到GitHub仓库里），再进入我的博客进行查看，一开始觉得没什么，不就是push完了再在线查看吗？也挺方便的。但是当我这两天再次使用Hexo搭建一个新的博客时，发现这两者的用户体验真的是有天壤之别。 下面我就说一下他们的差别： </p><ol><li>使用GitHub桌面版进行clone时，下载都是几KB每秒，这下载速度真的很让人<del>头秃</del>（偷懒），每次clone一个项目我都忍不住去玩一把云顶之奕！而使用Hexo用git bash下载速度是真的快，一分钟之内就能下载好（我也不知道原因是什么）。  </li><li>使用Jekyll无法本地查看渲染的博客，而Hexo可以在本地渲染博客，每次修改无需上传到GitHub即可查看。  </li><li>Hexo是一个台湾小哥开发的，所以有中文文档，而Jekyll的官方文档网页我压根就打不开！！！所以当我clone一个博客模板想改成自己的博客时，Hexo使用起来是真的方便！当然也要感谢Fluid开发人员写了一个他们自己主题的文档，我几乎没有看过Hexo的文档，根据Fluid的文档进行修改就完成了我的博客。（大约耗费了8个小时）</li></ol><h3 id="二-如何创建属于你的私人博客"><a href="#二-如何创建属于你的私人博客" class="headerlink" title="二.如何创建属于你的私人博客"></a>二.如何创建属于你的私人博客</h3><h4 id="1-注册GitHub账号"><a href="#1-注册GitHub账号" class="headerlink" title="1.注册GitHub账号"></a>1.注册GitHub账号</h4><p>在<a href="https://github.com/" target="_blank" rel="noopener">GitHub官网</a>创建账号即可，此步骤比较简单，我就不过多赘述。建议起一个好看的名字，因为会用于你的博客访问路径。<br>在注册好你的GitHub账号以后，点击右上角头像旁边的+号，选择new repository新建一个你的仓库，用于存放你的hexo文件。此处注意，仓库名必须要用“你的仓库名”+“.github.io”，其他选项照图片选中即可。<br><img src="/img/blog_img/2020213/888.png" srcset="/img/loading.gif" alt=""></p><h4 id="2-安装git及Node-js"><a href="#2-安装git及Node-js" class="headerlink" title="2.安装git及Node.js"></a>2.安装git及Node.js</h4><p>安装git ：进入 <a href="https://git-scm.com/download" target="_blank" rel="noopener">git下载</a> 界面选择所对应的版本下载安装即可。如果下载的很慢或点了下载以后没反应，可以在<a href="https://npm.taobao.org/mirrors/git-for-windows/" target="_blank" rel="noopener">淘宝的npm</a>进行下载。这个下载速度很快。  </p><p>安装Node.js：在<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网</a>下载并安装LTS版本即可。  </p><h4 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h4><p> 在安装Hexo之前先检查一下你的git 和node.js是否安装成功。打开你的git bash窗口(注意这里不是用CMD窗口)，输入以下命令检查。如果安装成功会返回版本号。</p><pre><code>git version node -vnpm -v</code></pre><p><img src="/img/blog_img/2020213/gitnodejs.png" srcset="/img/loading.gif" alt=""></p><p>如果安装成功会返回版本号如上图所示。接下来我们就可以安装Hexo了，在git bash中输入以下命令：</p><pre><code>npm install -g hexo-clihexo init myblogcd myblognpm install</code></pre><p>以上就已经安装好你的nexo了。<br>现在你就可以输入以下命令来启动你的hexo来在你的本地计算机上访问你的博客的雏形</p><pre><code>hexo s</code></pre><p>打开浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可访问你的博客。</p><p>到这你的博客就已经搭建成功啦！一开始我在搭建hexo博客的时候看见还要使用git这么麻烦的东西就很头疼，但是真正操作下来发现并没有那么难，就是照搬输入几行命令就好啦！</p><h4 id="4-配置SSH-key"><a href="#4-配置SSH-key" class="headerlink" title="4.配置SSH  key"></a>4.配置SSH  key</h4><p>这一步要注意一点，每一条命令的空格要输入正确否则可能会出错，如果配置过程中遇到错误可以百度解决。输入正确的话基本没啥事。<br>依然是使用我们的git bash窗口，输入以下命令创建SSH Key（如果你此前创建过那就可以跳过这一步，大多数人是没创建过的）：</p><pre><code>git config --global user.name &quot;用户名&quot;  #使用你的Github用户名git config --global user.email &quot;邮箱地址&quot;  #你用于创建GitHub账号的邮箱</code></pre><p>然后开始生成你的SSH Ksy，并查看你的SSH Key</p><pre><code>ssh-keygen -t rsa -C &#39;上面的邮箱&#39; #这一步需要按照提示按三下回车键，不要关掉这个窗口，一会需要复制东西。</code></pre><p>接着我们去GitHub官网进行设置，点击你的头像➡setting➡SSH and GPG keys➡new SSH key ，标题可以随便填写，key就填刚刚我们在git bash生成的那一串字符。<br><img src="/img/blog_img/2020213/githubsshkey.png" srcset="/img/loading.gif" alt=""><br>接着我们回到git bash窗口，输入以下命令：</p><pre><code>ssh -T git@github.com</code></pre><p>若返回 Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access. 内容，则证明添加成功。</p><h4 id="5-连接hexo上传到你的GitHub"><a href="#5-连接hexo上传到你的GitHub" class="headerlink" title="5.连接hexo上传到你的GitHub"></a>5.连接hexo上传到你的GitHub</h4><p>打开你的myblog文件夹，在根目录下的_config.yml 配置文件的最末尾将你的github项目的网址填入。<br><img src="/img/blog_img/2020213/555.png" srcset="/img/loading.gif" alt=""></p><p>安装一个部署插件 hexo-deployer-git</p><pre><code>npm install hexo-deployer-git --save</code></pre><p>执行以下的命令，就可以将你的hexo文件上传至你刚刚新建的github repository了。</p><pre><code>hexo g -d</code></pre><p>最后，打开你的GitHub的仓库就可以看见你的hexo文件夹了。<br>点击你仓库的setting，滑到后面，可以看到你的博客的访问入口。<br><img src="/img/blog_img/2020213/666.png" srcset="/img/loading.gif" alt=""><br><img src="/img/blog_img/2020213/777.png" srcset="/img/loading.gif" alt=""></p><p>以上我们就可以创建好博客啦。但是这只是有了一个模板的雏形，我们还需对博客进行配置，让它成为我们想要的样子，下一篇博客我将介绍如何修改博客样式。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>博客</tag>
+      
+      <tag>技术</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>搭建博客之前的一些简单介绍</title>
     <link href="/2020/02/12/2020-02-12-internet/"/>
     <url>/2020/02/12/2020-02-12-internet/</url>
